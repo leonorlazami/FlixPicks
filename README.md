@@ -51,7 +51,7 @@ In the process of building Movie Mania, I learned:
 - How to interact with external APIs like OMDB to fetch and display real-time data.
 - Dynamic manipulation of data based on user input and interactions.
 - Effective use of React hooks for managing state and side effects.
-- Responsive design and mobile-first workflow using Tailwind CSS.
+
 
 ## Installation
 
