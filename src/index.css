@@ -139,7 +139,7 @@ body {
 .list {
   list-style: none;
   padding: 0.8rem 0;
-  /* overflow: scroll; */
+  overflow: scroll;
 }
 
 .list-watched {
@@ -209,8 +209,6 @@ body {
   background-color: var(--color-red-dark);
 }
 
-/* ******* */
-
 .summary {
   padding: 2.2rem 3.2rem 1.8rem 3.2rem;
   border-radius: 0.9rem;
@@ -226,7 +224,8 @@ body {
 
 .summary div {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 2.4rem;
   font-size: 1.6rem;
   font-weight: 600;
@@ -326,7 +325,7 @@ body {
   aspect-ratio: 1;
   border-radius: 50%;
   border: none;
-  /* background-color: var(--color-text); */
+
   background-color: #fff;
   color: var(--color-background-500);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
@@ -339,11 +338,82 @@ body {
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 639px) {
+  html {
+    font-size: 50%;
+  }
 
-/*
-SPACING SYSTEM (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 64 / 80 / 96 / 128
+  body {
+    font-size: 1.6rem;
+  }
 
-FONT SIZE SYSTEM (px)
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 /52 / 62 / 74 / 86 / 98
-*/
+  .logo > h1 {
+    font-size: 2rem;
+  }
+
+  .box {
+    width: 100%;
+    max-width: none;
+  }
+
+  .nav-bar {
+    padding: 0 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+  }
+
+  .search {
+    width: 30%;
+    font-size: 1.2rem;
+  }
+
+  .num-results {
+    font-size: 1.2rem;
+  }
+
+  .main {
+    margin-top: 1.6rem;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center;
+  }
+
+  .summary {
+    width: 100%;
+    padding: 1.2rem 1.6rem 0.8rem 1.6rem;
+  }
+
+  .summary h2 {
+    font-size: 1.3rem;
+  }
+
+  .summary div {
+    font-size: 1.2rem;
+  }
+
+  .details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  .details img {
+    object-fit: cover;
+    width: 50%;
+  }
+
+  .details-overview {
+    width: 100%;
+    gap: 1rem;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .rating {
+    padding: 5rem;
+  }
+}

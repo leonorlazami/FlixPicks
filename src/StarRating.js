@@ -3,11 +3,13 @@ import { PropTypes } from "prop-types"
 const containerStyle = {
     display: 'flex',
     alignItems: 'center',
-    gap: '16px'
+    gap: '16px',
+    width: '100%'
 }
 
 const starContainerStyle = {
     display: 'flex',
+    width: '100%'
 }
 
 StarRating.propTypes = {
@@ -45,7 +47,7 @@ export default function StarRating({
     }
     return (
         <div style={containerStyle}>
-            <div style={starContainerStyle}>
+            <div style={starContainerStyle} className="starContainer">
                 {Array.from({ length: maxRating }, (_, i) =>
                     <Star key={i}
                         onRate={() => handleRating(i + 1)}
@@ -72,6 +74,8 @@ function Star({ onRate, full, onHoverIn, onHoverOut, color, size }) {
         cursor: 'pointer'
     }
     return <span role="button"
+
+
         style={starStyle}
         onClick={onRate}
         onMouseEnter={onHoverIn}
