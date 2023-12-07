@@ -3,6 +3,19 @@ import StarRating from "./StarRating";
 import { useMovies } from "./useMovies";
 import { useLocalStorageState } from "./useLocalStorageState";
 import { useKey } from "./useKey";
+import { FiAirplay } from "react-icons/fi";
+import { CgHashtag } from "react-icons/cg";
+import { GiStarsStack } from "react-icons/gi";
+import { RiStarSFill } from "react-icons/ri";
+import { IoHourglass } from "react-icons/io5";
+
+
+
+
+
+
+
+
 
 
 
@@ -111,8 +124,9 @@ function NavBar({ children }) {
 function Logo() {
   return (
     <div className="logo">
-      <span role="img">🍿</span>
-      <h1>usePopcorn</h1>
+      <FiAirplay size={24} />
+
+      <h1>FlixPicks</h1>
     </div>
   )
 }
@@ -175,6 +189,7 @@ function Box({ children }) {
     </div>
   )
 }
+
 
 
 
@@ -267,7 +282,7 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
     if (!title) return
     document.title = `Movie | ${title}`;
     return function () {
-      document.title = 'usePopcorn'
+      document.title = 'FlixPicks'
 
     }
   }, [title])
@@ -303,7 +318,7 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
                 )}
               </>
             ) : (
-              <h3>You rated this movie {watchedUserRating}<span>⭐</span></h3>
+              <h3>You rated this movie {watchedUserRating}<span><RiStarSFill size={16} color="#c2303d" /></span></h3>
             )}
           </div>
           <p><em>{plot}</em></p>
@@ -329,19 +344,20 @@ function WatchedSummary({ watched }) {
       <h2>Movies you watched</h2>
       <div>
         <p>
-          <span>#️⃣</span>
+          <span><CgHashtag size={16} />
+          </span>
           <span>{watched.length} movies</span>
         </p>
         <p>
-          <span>⭐️</span>
+          <span> <RiStarSFill size={16} /></span>
           <span>{avgImdbRating.toFixed(2)}</span>
         </p>
         <p>
-          <span>🌟</span>
+          <span><GiStarsStack size={16} /></span>
           <span>{avgUserRating.toFixed(2)}</span>
         </p>
         <p>
-          <span>⏳</span>
+          <span><IoHourglass size={16} /></span>
           <span>{avgRuntime} min</span>
         </p>
       </div>
@@ -366,15 +382,15 @@ function WatchedMovie({ movie, onDeleteWatched }) {
       <h3>{movie.title}</h3>
       <div>
         <p>
-          <span>⭐️</span>
+          <span><RiStarSFill size={16} color="#c2303d" /></span>
           <span>{movie.imdbRating}</span>
         </p>
         <p>
-          <span>🌟</span>
+          <span><GiStarsStack size={16} color="#c2303d" /></span>
           <span>{movie.userRating}</span>
         </p>
         <p>
-          <span>⏳</span>
+          <span><IoHourglass size={16} color="#c2303d" /></span>
           <span>{movie.runtime} min</span>
         </p>
         <button className="btn-delete"
