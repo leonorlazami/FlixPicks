@@ -41,7 +41,6 @@ export default function App() {
   function handleAddWatched(movie) {
     setWatched(watched => [...watched, movie])
 
-    // localStorage.setItem('watched', JSON.stringify([...watched, movie]))
   }
 
 
@@ -301,7 +300,7 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
             <h2>{title}</h2>
             <p>{released} &bull; {runtime}</p>
             <p>{genre}</p>
-            <p><span>⭐</span>{imdbRating} IMDB rating</p>
+            <p><span><RiStarSFill /></span>{imdbRating} IMDB rating</p>
           </div>
         </header>
 
@@ -318,7 +317,12 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
                 )}
               </>
             ) : (
-              <h3>You rated this movie {watchedUserRating}<span><RiStarSFill size={16} color="#c2303d" /></span></h3>
+              <div className="ratingInfo">
+                <div>
+                  <h3>You rated this movie {watchedUserRating}</h3>
+                </div>
+                <div><span><RiStarSFill size={16} color="#c2303d" /></span></div>
+              </div>
             )}
           </div>
           <p><em>{plot}</em></p>

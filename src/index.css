@@ -291,6 +291,11 @@ body {
   flex-direction: column;
   gap: 2.4rem;
 }
+.ratingInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 
 .btn-add {
   background-color: var(--color-primary);
@@ -422,6 +427,9 @@ body {
   }
   .rating {
     padding: 5rem;
+  }
+  .rating h3 {
+    padding: 2rem;
   }
   .list h3 {
     font-size: 2.3rem;
