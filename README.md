@@ -1,8 +1,8 @@
-# usePopcorn
+# FlixPicks
 
 ## Introduction
 
-usePopcorn is a movie search and tracking web application built using ReactJS. It allows users to search for movies, view movie details, and track their watched movies with ratings. This app leverages the OMDB API to fetch movie data and provides an interactive interface for movie enthusiasts.
+FlixPicks is a movie search and tracking web application built using ReactJS. It allows users to search for movies, view movie details, and track their watched movies with ratings. This app leverages the OMDB API to fetch movie data and provides an interactive interface for movie enthusiasts.
 
 ## Table of Contents
 
@@ -28,11 +28,11 @@ usePopcorn is a movie search and tracking web application built using ReactJS. I
 
 ### Screenshots
 
-![Movie Mania Screenshot](https://i.imgur.com/RZZ1bMj.png)
+![FlixPicks Screenshot](https://i.imgur.com/RR0q40H.png)
 
 ### Live Demo
 
-Explore the live application: [usePopcorn](https://use-popcorn-sigma.vercel.app/)
+Explore the live application: [FlixPicks](https://flix-picks-sigma.vercel.app/)
 
 ## Development
 
@@ -55,8 +55,8 @@ In the process of building Movie Mania, I learned:
 
 ## Installation
 
-1. Clone this repository to your local machine using Git: git clone [ https://github.com/leonorlazami/usePopcorn](https://github.com/leonorlazami/usePopcorn)
-2. Navigate to the project directory: cd usepopcorn
+1. Clone this repository to your local machine using Git: git clone [ https://github.com/leonorlazami/FlixPicks](https://github.com/leonorlazami/FlixPicks)
+2. Navigate to the project directory: cd FlixPicks
 3. Install the required dependencies: npm install
 4. Start the development server : npm start
 
