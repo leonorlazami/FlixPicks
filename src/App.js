@@ -204,8 +204,14 @@ function MovieList({ movies, onSelectMovie }) {
 }
 
 function Movie({ movie, onSelectMovie }) {
+
   return (
-    <li onClick={() => onSelectMovie(movie.imdbID)}>
+    <li onClick={() => {
+      onSelectMovie(movie.imdbID);
+
+
+
+    }}>
       <img src={movie.Poster} alt={`${movie.Title} poster`} />
       <h3>{movie.Title}</h3>
       <div>
@@ -215,6 +221,8 @@ function Movie({ movie, onSelectMovie }) {
         </p>
       </div>
     </li>
+
+
   )
 }
 function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
@@ -263,18 +271,35 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
 
   }
   useKey('Escape', onCloseMovie)
-
-  useEffect(function () {
+  useEffect(() => {
     async function getMovieDetails() {
-      setIsLoading(true)
-      const res =
-        await fetch(`https://www.omdbapi.com/?apikey=${KEY}&i=${selectedId}`)
-      const data = await res.json()
-      setMovie(data)
-      setIsLoading(false)
+      setIsLoading(true);
+
+      try {
+        const res = await fetch(`https://www.omdbapi.com/?apikey=${KEY}&i=${selectedId}`);
+        const data = await res.json();
+        setMovie(data);
+
+
+        if (window.innerWidth <= 768) {
+          setTimeout(() => {
+            window.scrollTo({
+              top: Number.MAX_SAFE_INTEGER,
+              behavior: "smooth",
+            });
+          }, 300);
+        }
+
+        setIsLoading(false);
+      } catch (error) {
+
+        console.error('Error fetching movie details:', error);
+        setIsLoading(false);
+      }
     }
-    getMovieDetails()
-  }, [selectedId])
+
+    getMovieDetails();
+  }, [selectedId, userRating])
 
 
   useEffect(function () {
