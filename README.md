@@ -2,7 +2,7 @@
 
 ## Introduction
 
-FlixPicks is a movie search and tracking web application built using ReactJS. It allows users to search for movies, view movie details, and track their watched movies with ratings. This app leverages the OMDB API to fetch movie data and provides an interactive interface for movie enthusiasts.
+FlixPicks, a movie search and tracking web app powered by ReactJS, enables users to search for movies, view details, and track watched movies with ratings. Leveraging the OMDB API, it offers an interactive interface for movie enthusiasts. Additionally, rated and favorited movies are saved in local storage for future access.
 
 ## Table of Contents
 
